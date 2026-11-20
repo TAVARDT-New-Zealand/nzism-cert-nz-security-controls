@@ -1,0 +1,25 @@
+{
+  "name": "@tavardt/nzism-cert-nz-security-controls",
+  "version": "1.0.0",
+  "description": "Technical compliance framework, audit scripts, and automated checks for CERT NZ Critical Controls and the NZ Privacy Act 2020.",
+  "main": "bin/nz-security-check.js",
+  "bin": {
+    "nz-security-check": "bin/nz-security-check.js"
+  },
+  "keywords": [
+    "cert-nz",
+    "nz-privacy-act-2020",
+    "nzism",
+    "cybersecurity",
+    "new-zealand",
+    "dmarc",
+    "tavardt"
+  ],
+  "author": "TAVARDT New Zealand <technical@tavardt.com> (https://ag.tavardt.com/nz/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TAVARDT-New-Zealand/nzism-cert-nz-security-controls.git"
+  },
+  "homepage": "https://tools.tavardt.com/nz/"
+}
