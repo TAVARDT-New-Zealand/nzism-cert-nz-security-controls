@@ -6,7 +6,7 @@
 
 A technical compliance framework, perimeter audit checklist, and verification tooling tailored specifically to the **New Zealand Privacy Act 2020**, the **New Zealand Information Security Manual (NZISM)**, and **CERT NZ Critical Controls**.
 
-Engineered and maintained independently by the cyber defence practice at **TAVARDT New Zealand**.
+Engineered and maintained independently by the cyber defence practice at **TAVARDT**.
 
 ***
 
@@ -62,12 +62,16 @@ For immediate non-intrusive online diagnostics, access the New Zealand verificat
 
 Need expert engineering support for Privacy Act compliance, offensive security testing, or emergency breach containment in Auckland, Wellington, or Christchurch?
 
-* **New Zealand Practice:** [Portal Institucional](https://ag.tavardt.com/nz/)
+* **New Zealand Practice:** [Institutional Portal](https://ag.tavardt.com/nz/)
 * **Cybersecurity & Hardening:** Divisão de Cibersegurança
-* **Direct Enquiries:** [Canal de Contato](https://ag.tavardt.com/nz/contact/)
+* **Direct Enquiries:** [Contact Channel](https://ag.tavardt.com/nz/contact/)
 
 ***
 
 ## License
 
-Released under the MIT License. Copyright (c) 2026 TAVARDT.
+Released under the MIT License. Copyright
+
+***
+
+© 2026 TAVARDT. All rights reserved.
