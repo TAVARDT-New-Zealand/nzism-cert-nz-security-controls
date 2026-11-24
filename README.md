@@ -1,4 +1,4 @@
-# NZ Privacy Act 2020 & CERT NZ Security Controls | TAVARDT New Zealand
+# NZ Privacy Act 2020 & CERT NZ Security Controls
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Verification Suite](https://img.shields.io/badge/TAVARDT-New%20Zealand%20Suite-5b3cf5.svg)](https://tools.tavardt.com/nz/)
@@ -70,4 +70,4 @@ Need expert engineering support for Privacy Act compliance, offensive security t
 
 ## License
 
-Released under the MIT License. Copyright (c) 2026 TAVARDT New Zealand.
+Released under the MIT License. Copyright (c) 2026 TAVARDT.
