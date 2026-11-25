@@ -1,9 +1,9 @@
 # NZ Privacy Act 2020 & CERT NZ Security Controls
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Verification Suite](https://img.shields.io/badge/TAVARDT-New%20Zealand%20Suite-5b3cf5.svg)](https://tools.tavardt.com/nz/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-Node.js-yellow.svg)](https://nodejs.org/)
 [![Governance](https://img.shields.io/badge/Compliance-NZ%20Privacy%20Act%202020-00C853.svg)](https://ag.tavardt.com/nz/cybersecurity/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A technical compliance framework, perimeter audit checklist, and verification tooling tailored specifically to the **New Zealand Privacy Act 2020**, the **New Zealand Information Security Manual (NZISM)**, and **CERT NZ Critical Controls**.
 
@@ -55,7 +55,6 @@ For immediate non-intrusive online diagnostics, access the New Zealand verificat
 * [NZ DMARC & Spoofing Checker](https://tools.tavardt.com/nz/dmarc-checker/): Audits email delivery and anti-impersonation records.
 * [NZ Security Headers Inspector](https://tools.tavardt.com/nz/security-headers-check/): Verifies browser isolation policies.
 * [Exposed Files & Credential Scanner](https://tools.tavardt.com/nz/exposed-files-scanner/): Detects secret keys and database leaks.
-* Full Diagnostic Suite (New Zealand): 20 free technical tools.
 
 ***
 
