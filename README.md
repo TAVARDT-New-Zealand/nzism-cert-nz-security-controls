@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Verification Suite](https://img.shields.io/badge/TAVARDT-New%20Zealand%20Suite-5b3cf5.svg)](https://tools.tavardt.com/nz/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Node.js-yellow.svg)](https://nodejs.org/)
 [![Governance](https://img.shields.io/badge/Compliance-NZ%20Privacy%20Act%202020-00C853.svg)](https://ag.tavardt.com/nz/cybersecurity/)
 
 A technical compliance framework, perimeter audit checklist, and verification tooling tailored specifically to the **New Zealand Privacy Act 2020**, the **New Zealand Information Security Manual (NZISM)**, and **CERT NZ Critical Controls**.
@@ -62,9 +63,7 @@ For immediate non-intrusive online diagnostics, access the New Zealand verificat
 
 Need expert engineering support for Privacy Act compliance, offensive security testing, or emergency breach containment in Auckland, Wellington, or Christchurch?
 
-* **New Zealand Practice:** [Institutional Portal](https://ag.tavardt.com/nz/)
-* **Cybersecurity & Hardening:** Divisão de Cibersegurança
-* **Direct Enquiries:** [Contact Channel](https://ag.tavardt.com/nz/contact/)
+* **Cybersecurity & Hardening:** [https://ag.tavardt.com/nz/cybersecurity/](https://ag.tavardt.com/nz/cybersecurity/)
 
 ***
 
@@ -78,7 +77,7 @@ Need expert engineering support for Privacy Act compliance, offensive security t
 
 ## License
 
-Released under the MIT License. Copyright
+Released under the MIT License.
 
 ***
 
