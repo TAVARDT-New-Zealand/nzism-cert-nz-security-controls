@@ -11,58 +11,72 @@ Engineered and maintained independently by the cyber defence practice at **TAVAR
 
 ***
 
-## 1. Regulatory Context in New Zealand
+## 1. Regulatory Framework and Technical Standards in New Zealand
 
-New Zealand organisations and digital platforms operating within Aotearoa are bound by statutory standards designed to protect sensitive data and prevent cyber extortion:
+Organisations and digital platforms operating within Aotearoa must satisfy rigorous statutory requirements to protect personal information and withstand cyber threats. The compliance architecture integrates three authoritative national security baselines:
 
-1. **New Zealand Privacy Act 2020 (13 IPPs):** Mandatory breach notification to the Privacy Commissioner for privacy breaches causing serious harm.
-2. **CERT NZ Critical Security Controls:** Directives to enforce patch management, multi-factor authentication, domain email security, and logging.
-3. **NZISM Operational Baseline:** Guidance for secure transport protocols (TLS 1.3), perimeter segmentation, and encryption in transit.
-
-***
-
-## 2. Technical Control Architecture
-
-| Domain | Control Focus | Verification Mechanism |
-|-|-|-|
-| **Identity & Access** | Two-factor authentication (2FA) on all administrative conduits | Audit cloud identity providers and remote VPN gateways |
-| **Domain Authentication** | Strict DMARC `p=reject` or `p=quarantine` with SPF and DKIM | Automated DNS TXT record parsing |
-| **Transport Layer** | Strict HSTS with subdomains and modern cipher suites | Real-time SSL/TLS handshake inspection |
-| **Leak Prevention** | Zero public accessibility of configuration and environment files | Automated HTTP scanning for root file disclosures |
+* **New Zealand Privacy Act 2020 (13 IPPs)**: Enforces Information Privacy Principle 5 regarding reasonable security safeguards for stored personal data. It mandates immediate reporting of privacy breaches that cause or risk serious harm to the Office of the Privacy Commissioner.
+* **CERT NZ Critical Security Controls**: Establishes priority defenses including strict email authentication via DMARC, proactive patch management, and credential boundary protection.
+* **NZISM Operational Security Baseline**: Mandates robust transport layer security protocols and browser isolation headers to defend institutional communications across digital perimeters.
 
 ***
 
-## 3. Perimeter Audit CLI for New Zealand Domains
+## 2. Compliance Architecture and Technical Audit Controls
 
-This repository provides an automated Node.js validation tool designed to inspect external perimeter controls and anti-spoofing defences for Kiwi organisations (`.co.nz`, `.org.nz`, `.govt.nz`):
+The framework implements deterministic automated inspections to validate critical perimeter controls across three primary defense surfaces:
 
-### Running via Terminal:
+* **NZISM Transport & Browser Security Headers**: Verifies active enforcement of cryptographic transport and client isolation directives. It audits `Strict-Transport-Security` (HSTS), `Content-Security-Policy` (CSP), `X-Frame-Options`, and `X-Content-Type-Options`.
+* **CERT NZ Domain Authentication and Anti-Spoofing**: Conducts automated DNS record validation to ensure active `v=DMARC1` policies are deployed. This control prevents unauthorised sender spoofing and business email compromise attacks.
+* **Perimeter Secret and Configuration Leak Defense**: Systematically probes public web paths to verify that sensitive configuration files remain strictly inaccessible. It tests whether internal `.env` files are exposed to unauthenticated external access.
+
+***
+
+## 3. Threat Vectors and Operational Risk Mitigation
+
+Unprotected perimeter infrastructure exposes Kiwi organisations to severe privacy violations, financial extortion, and regulatory investigations. The verification tool audits and mitigates four critical operational risks:
+
+* **Email Impersonation and Invoice Redirection Fraud**: Missing DMARC records allow malicious actors to forge outgoing emails under your domain name. Implementing strict quarantine or reject policies prevents fraudulent communication targeting customers and vendors.
+* **Protocol Downgrade and Session Hijacking**: Absence of HSTS allows adversaries to intercept unencrypted HTTP traffic across public networks. Enforcing strict transport policies ensures all user sessions remain securely encrypted over TLS channels.
+* **Credential and Cloud API Secret Exfiltration**: Publicly readable `.env` files reveal database connection strings, encryption keys, and administrative API tokens. Attackers utilise these exposed credentials to compromise internal data stores directly.
+* **Browser Redressing and Script Injection**: Missing CSP and frame controls leave web applications susceptible to clickjacking and cross-site scripting. Hardening HTTP response headers blocks unauthorised scripts and UI redressing attacks.
+
+***
+
+## 4. Quick Start and Operational Verification
+
+Run the automated perimeter security inspection locally against New Zealand domains using Node.js:
+
 ```bash
-node bin/nz-security-check.js enterprise.co.nz
+git clone https://github.com/TAVARDT-New-Zealand/nzism-cert-nz-security-controls.git
+cd nzism-cert-nz-security-controls
+node bin/nz-security-check.js example.co.nz
 ```
 
-### What the Tool Evaluates:
-* **Email Brand Integrity (DMARC):** Validates that domain spoofing and invoice fraud cannot be executed in your organisation's name.
-* **Perimeter Header Hardening:** Audits CSP, HSTS, and X-Frame-Options according to NZISM guidance.
-* **Accidental Exposure:** Checks for publicly accessible `.env` configuration files or backup archives.
+### Execution Diagnostics and Output Evaluation
+
+The inspection utility returns deterministic classifications for each evaluated defensive control:
+
+* **Verified Protection Confirmed (`[PASSED]`)**: Indicates that the evaluated control (such as enforced headers, active DMARC records, or protected configuration paths) is properly implemented.
+* **Critical Privacy Risk Detected (`[CRITICAL]` / `[WARNING]`)**: Signals missing email authentication records, absent security headers, or publicly readable `.env` files requiring urgent operational remediation.
 
 ***
 
-## 4. Regional Online Diagnostic Tools (New Zealand)
+## 5. Frequently Asked Technical Questions (FAQ)
 
-For immediate non-intrusive online diagnostics, access the New Zealand verification suite:
+### How does the verification utility support compliance with IPP 5 under the New Zealand Privacy Act 2020?
+The utility automates perimeter security inspections to verify that digital services implement reasonable security safeguards against loss, unauthorised access, and disclosure of personal data. By validating transport encryption and blocking public access to environment credentials, it ensures digital platforms meet statutory security standards.
 
-* [NZ DMARC & Spoofing Checker](https://tools.tavardt.com/nz/dmarc-checker/): Audits email delivery and anti-impersonation records.
-* [NZ Security Headers Inspector](https://tools.tavardt.com/nz/security-headers-check/): Verifies browser isolation policies.
-* [Exposed Files & Credential Scanner](https://tools.tavardt.com/nz/exposed-files-scanner/): Detects secret keys and database leaks.
+### Why does CERT NZ prioritise DMARC implementation as a critical security control for organisations?
+Domain-based Message Authentication, Reporting and Conformance (DMARC) prevents cyber adversaries from sending fraudulent emails that impersonate trusted New Zealand domains. Enforcing a strict DMARC policy mitigates phishing campaigns, business email compromise, and brand reputation damage.
 
-***
+### What specific operational risks are introduced by missing NZISM browser security headers?
+Omitting headers such as HSTS, CSP, and X-Frame-Options exposes web visitors to clickjacking, protocol downgrade attacks, and cross-site script injections. Enforcing these browser isolation directives ensures that all communication occurs over encrypted channels and blocks unconsented data exfiltration.
 
-## 5. Enterprise Cyber Defence & Incident Response in New Zealand
+### How does the script evaluate perimeter exposure risks for sensitive configuration files?
+The Node.js tool conducts targeted HTTP requests to ascertain whether internal environment files like .env are publicly accessible without authentication. Receiving an HTTP 200 response flags an immediate critical privacy vulnerability that requires urgent web server access restriction.
 
-Need expert engineering support for Privacy Act compliance, offensive security testing, or emergency breach containment in Auckland, Wellington, or Christchurch?
-
-* **Cybersecurity & Hardening:** [https://ag.tavardt.com/nz/cybersecurity/](https://ag.tavardt.com/nz/cybersecurity/)
+### What technical remediation steps should engineering teams take if a control check fails?
+Infrastructure teams must immediately configure web server rules to return HTTP 403 or 404 responses for dotfiles and internal directories. Additionally, missing DMARC TXT records must be published in DNS and exposed application secrets must be revoked and rotated without delay.
 
 ***
 
