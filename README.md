@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://ag.tavardt.com/nz/">
+    <img src="https://ag.tavardt.com/img/tavardt-banner.png" alt="TAVARDT" width="1024" />
+  </a>
+</p>
+
 # NZ Privacy Act 2020 & CERT NZ Security Controls
 
 [![Verification Suite](https://img.shields.io/badge/TAVARDT-New%20Zealand%20Suite-5b3cf5.svg)](https://tools.tavardt.com/nz/)
